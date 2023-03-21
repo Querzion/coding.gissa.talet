@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="GissaTalet"/>
+        <attribute name="authors" value="Slisk Lindqvist"/>
+        <attribute name="about" value="Guess the Number, in four different levels."/>
+        <attribute name="saved" value="2023-03-21 01:25:45 pm"/>
+        <attribute name="created" value="U2xpc2sgTGluZHF2aXN0O1ZNMTE7MjAyMy0wMy0yMTsxMDoyMToxNiBhbTszMDg2"/>
+        <attribute name="edited" value="U2xpc2sgTGluZHF2aXN0O1ZNMTE7MjAyMy0wMy0yMTswMToyNTo0NSBwbTs2OzMyMjA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="MenuChoice" type="Integer" array="False" size=""/>
+            <assign variable="MenuChoice" expression="0"/>
+            <while expression="MenuChoice != 6">
+                <output expression="&quot;Menu&quot;" newline="True"/>
+                <output expression="&quot;Option 1. GameMode Easy&quot;" newline="True"/>
+                <output expression="&quot;Option 2. GameMode Medium&quot;" newline="True"/>
+                <output expression="&quot;Option 3. GameMode Hard&quot;" newline="True"/>
+                <output expression="&quot;Option 4. GameMode Hardcore&quot;" newline="True"/>
+                <output expression="&quot;Option 5. HighScores&quot;" newline="True"/>
+                <output expression="&quot;Option 6. Exit Application&quot;" newline="True"/>
+                <output expression="&quot;Choose one option&quot;" newline="True"/>
+                <input variable="MenuChoice"/>
+                <declare name="i" type="Integer" array="False" size=""/>
+                <assign variable="i" expression="0"/>
+                <declare name="Guess" type="Integer" array="False" size=""/>
+                <assign variable="Guess" expression="0"/>
+                <declare name="RandomNR" type="Integer" array="False" size=""/>
+                <if expression="MenuChoice == 1">
+                    <then>
+                        <output expression="&quot;Start GissaTalet - Easy&quot;" newline="True"/>
+                        <assign variable="RandomNR" expression="Random(100)"/>
+                        <output expression="&quot;Guess a number between: 1 - 100&quot;" newline="True"/>
+                        <do expression="Guess != RandomNR">
+                            <output expression="&quot;   &gt;&gt;  &quot;" newline="True"/>
+                            <input variable="Guess"/>
+                            <declare name="Difference" type="Integer" array="False" size=""/>
+                            <assign variable="Difference" expression="RandomNR - Guess"/>
+                            <if expression="Guess &gt;= 1 &amp;&amp; Guess &lt; 101">
+                                <then>
+                                    <if expression="Guess == RandomNR">
+                                        <then>
+                                            <output expression="&quot;Congratulations! It took you {x} times to guess right&quot;" newline="True"/>
+                                            <output expression="&quot;You are on the Highscore list. (This does not work) Enter your name: &quot;" newline="True"/>
+                                            <declare name="Score" type="Integer" array="False" size=""/>
+                                            <assign variable="Score" expression="i"/>
+                                            <declare name="Name" type="String" array="False" size=""/>
+                                            <input variable="Name"/>
+                                        </then>
+                                        <else>
+                                            <if expression="Guess &lt; RandomNR">
+                                                <then>
+                                                    <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                        <then>
+                                                            <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                            <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                            <if expression="Guess &gt; RandomNR">
+                                                <then>
+                                                    <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                        <then>
+                                                            <output expression="&quot;Your Number was too big. Guess smaller.&quot;" newline="True"/>
+                                                            <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Your Number was too big. Guess smaller..&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                            <output expression="&quot;Insert a number between 1 - 100!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else/>
+                            </if>
+                            <assign variable="i" expression="i + 1"/>
+                        </do>
+                        <output expression="&quot;Thank you, Come Again!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="MenuChoice == 2">
+                            <then>
+                                <output expression="&quot;Start GissaTalet - Medium&quot;" newline="True"/>
+                                <assign variable="RandomNR" expression="Random(250)"/>
+                                <output expression="&quot;Guess a number between: 1 - 250&quot;" newline="True"/>
+                                <do expression="Guess != RandomNR">
+                                    <output expression="&quot;   &gt;&gt;  &quot;" newline="True"/>
+                                    <input variable="Guess"/>
+                                    <declare name="Difference" type="Integer" array="False" size=""/>
+                                    <assign variable="Difference" expression="RandomNR - Guess"/>
+                                    <if expression="Guess &gt;= 1 &amp;&amp; Guess &lt; 251">
+                                        <then>
+                                            <if expression="Guess == RandomNR">
+                                                <then>
+                                                    <output expression="&quot;Congratulations! It took you {x} times to guess right&quot;" newline="True"/>
+                                                    <output expression="&quot;You are on the Highscore list. (This does not work) Enter your name: &quot;" newline="True"/>
+                                                    <declare name="Score" type="Integer" array="False" size=""/>
+                                                    <assign variable="Score" expression="i"/>
+                                                    <declare name="Name" type="String" array="False" size=""/>
+                                                    <input variable="Name"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="Guess &lt; RandomNR">
+                                                        <then>
+                                                            <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                <then>
+                                                                    <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                    <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                    <if expression="Guess &gt; RandomNR">
+                                                        <then>
+                                                            <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                <then>
+                                                                    <output expression="&quot;Your Number was too big. Guess smaller.&quot;" newline="True"/>
+                                                                    <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Your Number was too big. Guess smaller..&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                    <output expression="&quot;Insert a number between 1 - 100!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <assign variable="i" expression="i + 1"/>
+                                </do>
+                                <output expression="&quot;Thank you, Come Again!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="MenuChoice == 3">
+                                    <then>
+                                        <output expression="&quot;Start GissaTalet - Hard&quot;" newline="True"/>
+                                        <assign variable="RandomNR" expression="Random(500)"/>
+                                        <output expression="&quot;Guess a number between: 1 - 500&quot;" newline="True"/>
+                                        <do expression="Guess != RandomNR">
+                                            <output expression="&quot;   &gt;&gt;  &quot;" newline="True"/>
+                                            <input variable="Guess"/>
+                                            <declare name="Difference" type="Integer" array="False" size=""/>
+                                            <assign variable="Difference" expression="RandomNR - Guess"/>
+                                            <if expression="Guess &gt;= 1 &amp;&amp; Guess &lt; 501">
+                                                <then>
+                                                    <if expression="Guess == RandomNR">
+                                                        <then>
+                                                            <output expression="&quot;Congratulations! It took you {x} times to guess right&quot;" newline="True"/>
+                                                            <output expression="&quot;You are on the Highscore list. (This does not work) Enter your name: &quot;" newline="True"/>
+                                                            <declare name="Score" type="Integer" array="False" size=""/>
+                                                            <assign variable="Score" expression="i"/>
+                                                            <declare name="Name" type="String" array="False" size=""/>
+                                                            <input variable="Name"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="Guess &lt; RandomNR">
+                                                                <then>
+                                                                    <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                        <then>
+                                                                            <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                            <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                            <if expression="Guess &gt; RandomNR">
+                                                                <then>
+                                                                    <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                        <then>
+                                                                            <output expression="&quot;Your Number was too big. Guess smaller.&quot;" newline="True"/>
+                                                                            <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Your Number was too big. Guess smaller..&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                            <output expression="&quot;Insert a number between 1 - 100!&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                            <assign variable="i" expression="i + 1"/>
+                                        </do>
+                                        <output expression="&quot;Thank you, Come Again!&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="MenuChoice == 4">
+                                            <then>
+                                                <output expression="&quot;Start GissaTalet - Hardcore&quot;" newline="True"/>
+                                                <assign variable="RandomNR" expression="Random(1000)"/>
+                                                <output expression="&quot;Guess a number between: 1 - 1000&quot;" newline="True"/>
+                                                <do expression="Guess != RandomNR">
+                                                    <output expression="&quot;   &gt;&gt;  &quot;" newline="True"/>
+                                                    <input variable="Guess"/>
+                                                    <declare name="Difference" type="Integer" array="False" size=""/>
+                                                    <assign variable="Difference" expression="RandomNR - Guess"/>
+                                                    <if expression="Guess &gt;= 1 &amp;&amp; Guess &lt; 1001">
+                                                        <then>
+                                                            <if expression="Guess == RandomNR">
+                                                                <then>
+                                                                    <output expression="&quot;Congratulations! It took you {x} times to guess right&quot;" newline="True"/>
+                                                                    <output expression="&quot;You are on the Highscore list. (This does not work) Enter your name: &quot;" newline="True"/>
+                                                                    <declare name="Score" type="Integer" array="False" size=""/>
+                                                                    <assign variable="Score" expression="i"/>
+                                                                    <declare name="Name" type="String" array="False" size=""/>
+                                                                    <input variable="Name"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="Guess &lt; RandomNR">
+                                                                        <then>
+                                                                            <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                                <then>
+                                                                                    <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                                    <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Your Number was too small. Guess bigger.&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else/>
+                                                                    </if>
+                                                                    <if expression="Guess &gt; RandomNR">
+                                                                        <then>
+                                                                            <if expression="-5 &lt;= difference &amp;&amp; difference &lt;= 5">
+                                                                                <then>
+                                                                                    <output expression="&quot;Your Number was too big. Guess smaller.&quot;" newline="True"/>
+                                                                                    <output expression="&quot;You are close to being right though&quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Your Number was too big. Guess smaller..&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else/>
+                                                                    </if>
+                                                                    <output expression="&quot;Insert a number between 1 - 100!&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                    <assign variable="i" expression="i + 1"/>
+                                                </do>
+                                                <output expression="&quot;Thank you, Come Again!&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <if expression="MenuChoice == 5">
+                                                    <then>
+                                                        <declare name="BogusVar" type="Integer" array="False" size=""/>
+                                                        <assign variable="BogusVar" expression="0"/>
+                                                        <while expression="BogusVar != 5">
+                                                            <output expression="&quot;Nested Menu - HighScores&quot;" newline="True"/>
+                                                            <output expression="&quot;Option 1. HighScore: Easy&quot;" newline="True"/>
+                                                            <output expression="&quot;Option 2. HighScore: Medium&quot;" newline="True"/>
+                                                            <output expression="&quot;Option 3. HighScore: Hard&quot;" newline="True"/>
+                                                            <output expression="&quot;Option 4. HighScore: Hardcore&quot;" newline="True"/>
+                                                            <output expression="&quot;Option 6. Go Back&quot;" newline="True"/>
+                                                            <output expression="&quot;Choose one option&quot;" newline="True"/>
+                                                            <input variable="BogusVar"/>
+                                                            <if expression="MenuChoice == 1">
+                                                                <then>
+                                                                    <output expression="&quot;HighScore : Easy&quot;" newline="True"/>
+                                                                    <output expression="&quot;Not Working&quot;" newline="True"/>
+                                                                    <read variable="Score"/>
+                                                                    <read variable="Name"/>
+                                                                    <output expression="&quot;Score &amp; Name&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="MenuChoice == 2">
+                                                                        <then>
+                                                                            <output expression="&quot;HighScore : Medium&quot;" newline="True"/>
+                                                                            <output expression="&quot;Not Working&quot;" newline="True"/>
+                                                                            <read variable="Score"/>
+                                                                            <read variable="Name"/>
+                                                                            <output expression="&quot;Score &amp; Name&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="MenuChoice == 3">
+                                                                                <then>
+                                                                                    <output expression="&quot;HighScore : Hard&quot;" newline="True"/>
+                                                                                    <output expression="&quot;Not Working&quot;" newline="True"/>
+                                                                                    <read variable="Score"/>
+                                                                                    <read variable="Name"/>
+                                                                                    <output expression="&quot;Score &amp; Name&quot;" newline="True"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <if expression="MenuChoice == 4">
+                                                                                        <then>
+                                                                                            <output expression="&quot;HighScore : Hardcore&quot;" newline="True"/>
+                                                                                            <output expression="&quot;Not Working&quot;" newline="True"/>
+                                                                                            <read variable="Score"/>
+                                                                                            <read variable="Name"/>
+                                                                                            <output expression="&quot;Score &amp; Name&quot;" newline="True"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <if expression="MenuChoice == 5">
+                                                                                                <then>
+                                                                                                    <home/>
+                                                                                                </then>
+                                                                                                <else>
+                                                                                                    <output expression="&quot;Invalid Value Choice&quot;" newline="True"/>
+                                                                                                </else>
+                                                                                            </if>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </while>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="MenuChoice == 6">
+                                                            <then>
+                                                                <output expression="&quot;Good Bye!&quot;" newline="True"/>
+                                                            </then>
+                                                            <else>
+                                                                <output expression="&quot;Invalid Value Choice&quot;" newline="True"/>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
