@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<ArrayOfHighScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="MediumScore.Scores">
-  <HighScore>
-    <ScoreValue>10</ScoreValue>
-    <PlayerName>Querzion</PlayerName>
-  </HighScore>
-</ArrayOfHighScore>
