@@ -16,3 +16,8 @@ To Use the FlowChart file. Download and install : Flowgorithm
     http://www.flowgorithm.org/download/
     Tutorial:
     https://www.youtube.com/watch?v=7SuYTvYCqOw
+
+
+Known bugs:
+    Loading of scoreboard not fixed.
+    Adding to the scoreboard - only 1 entry.
